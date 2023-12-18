@@ -95,6 +95,7 @@ class Mnt_echoeNode(OpenMaya.MPxNode):
         return
 
     def transferAttributesValues(self, firstNodeObj, secondNodeObj):
+        useTRSAttrPlugValue = OpenMaya.MFnDependencyNode(self.thisMObject()).findPlug('Use_Transform_Attributes', False).asBool()
         firstNodeDnFn           = OpenMaya.MFnDependencyNode(firstNodeObj)
         secondNodeDnFn          = OpenMaya.MFnDependencyNode(secondNodeObj)
 
