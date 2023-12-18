@@ -1,0 +1,1 @@
+Here we will add usefull script for rigging.
