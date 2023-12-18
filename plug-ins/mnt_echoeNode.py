@@ -102,6 +102,12 @@ class Mnt_echoeNode(OpenMaya.MPxNode):
         firstNodeAttrList = cmds.listAttr(firstNodeDnFn.name(), k = True)
 
         for attr in firstNodeAttrList:
+            if useTRSAttrPlugValue == False:
+                if 'translate' in attr or 'rotate' in attr or 'scale' in attr:
+                    continue
+            else:
+                pass
+
             value = firstNodeDnFn.findPlug(attr, False).asMDataHandle()
             try:
                 plug = secondNodeDnFn.findPlug(attr, False)
