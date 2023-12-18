@@ -1,0 +1,6 @@
++ MAYAVERSION:2023 mnt_RIGGING_Tools 1.0 ./mnt_RIGGING_Tools
++ MAYAVERSION:2024 mnt_RIGGING_Tools 1.0 ./mnt_RIGGING_Tools
+[r] scripts: scripts
+MAYA_MODULE_UI_WORKSPACE_PATH+:=resources/workspaces
+MAYA_CUSTOM_TEMPLATE_PATH+:=resources/viewTemplates
+BIFROST_BOARD_GRAPH_COUNTERS_HUD=1
