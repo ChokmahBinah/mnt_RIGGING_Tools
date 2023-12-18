@@ -12,7 +12,7 @@ def maya_useNewAPI():
 
 class Mnt_echoeNode(OpenMaya.MPxNode):
     kPluginNodeName = 'mnt_echoe'
-    id              = OpenMaya.MTypeId( 0xDAD0 )
+    id              = OpenMaya.MTypeId( 0xDAE9 )
 
     firstObjectCallback     = None
     secondObjectCallback    = None
@@ -28,6 +28,7 @@ class Mnt_echoeNode(OpenMaya.MPxNode):
     def initialize():
         # Defines node input attributes
         messageAttrFn = OpenMaya.MFnMessageAttribute()
+        numericAttrFn = OpenMaya.MFnNumericAttribute()
 
         Mnt_echoeNode.firstCTRL_attr    = messageAttrFn.create('firstController', 'First_Controller')
         messageAttrFn.hidden            = False
@@ -40,6 +41,14 @@ class Mnt_echoeNode(OpenMaya.MPxNode):
         messageAttrFn.writable          = True
         messageAttrFn.connectable       = True
         Mnt_echoeNode.addAttribute(Mnt_echoeNode.secondCTRL_attr)
+
+        Mnt_echoeNode.useTRSAttr = numericAttrFn.create('Use_Transform_Attributes', 'Use_Transform_Attributes', OpenMaya.MFnNumericData.kBoolean, False)
+        numericAttrFn.hidden = False
+        numericAttrFn.writable = True
+        numericAttrFn.connectable = True
+        numericAttrFn.channelBox = True
+        numericAttrFn.keyable = True
+        Mnt_echoeNode.addAttribute(Mnt_echoeNode.useTRSAttr)
         # _____________________________
 
         return
